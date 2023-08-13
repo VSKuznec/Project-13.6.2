@@ -34,8 +34,17 @@ namespace Project_13._6._2
                     }
                 }
 
-                Console.WriteLine(words);
+                var word = result.OrderByDescending(x => x.Frequency).Take(10).ToList();
+                foreach (var wor in words)
+                {
+                    Console.WriteLine(wor);
+                }
             }
+
+            var orderedWords = dictionary.OrderByDescending(n => n.Value);
+
+            foreach (var item in orderedWords)
+                Console.WriteLine(item);
         }
     }
 }
